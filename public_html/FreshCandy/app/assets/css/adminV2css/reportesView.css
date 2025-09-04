@@ -1,0 +1,287 @@
+/* 
+ * REPORTES.CSS
+ * Estilos específicos para la sección de reportes del panel admin Fresh Candy
+ */
+
+/* Contenedor principal de la sección de reportes */
+.reportes-section {
+    padding: 20px;
+    width: 100%;
+}
+
+.reportes-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    width: 100%;
+}
+
+/* Tarjetas de reportes */
+.report-card {
+    background-color: var(--back-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition-speed) var(--transition-fn),
+                box-shadow var(--transition-speed) var(--transition-fn);
+}
+
+.report-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Cabecera de la tarjeta de reporte */
+.report-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+    color: var(--text-light);
+}
+
+.report-card-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-light);
+}
+
+.report-card-title i {
+    font-size: 24px;
+    color: var(--text-light);
+}
+
+.report-card-title h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-light);
+}
+
+.report-card-badge {
+    font-size: 12px;
+    padding: 6px 12px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.table-scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Cuerpo de la tarjeta de reporte */
+.report-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.report-description {
+    color: var(--text-dark);
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Estilos para los filtros */
+.report-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+    background-color: var(--back-muted);
+    border-radius: var(--border-radius-sm);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 150px;
+    flex: 1;
+}
+
+.filter-group label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.filter-select, .filter-date {
+    border: 1px solid var(--gray-light);
+    border-radius: var(--border-radius-sm);
+    padding: 10px 12px;
+    font-size: 14px;
+    color: var(--text-dark);
+    background-color: var(--back-color);
+    transition: border-color var(--transition-speed) var(--transition-fn),
+                box-shadow var(--transition-speed) var(--transition-fn);
+    outline: none;
+}
+
+.filter-select:focus, .filter-date:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--primary-muted);
+}
+
+/* Contenedor para la vista previa del reporte */
+.report-preview-container {
+    border: 1px solid var(--gray-light);
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+/* Estilos para las tablas de reportes */
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.report-table th, .report-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.report-table th {
+    background-color: var(--back-muted);
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.report-table tbody tr {
+    transition: background-color var(--transition-speed) var(--transition-fn);
+}
+
+.report-table tbody tr:hover {
+    background-color: var(--back-muted);
+}
+
+.report-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* Botones para generar PDF */
+.report-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+.btn-generate-pdf {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(to right, var(--secondary-color), var(--secondary2-color));
+    color: var(--text-light);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform var(--transition-speed) var(--transition-fn),
+                box-shadow var(--transition-speed) var(--transition-fn);
+}
+
+.btn-generate-pdf:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-generate-pdf:active {
+    transform: translateY(0);
+}
+
+/* Contenedor para gráficos */
+.report-chart-container {
+    height: 250px;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+/* Estilos para los mensajes de error o feedback */
+.report-feedback {
+    padding: 12px 16px;
+    border-radius: var(--border-radius-sm);
+    margin-top: 16px;
+    font-size: 14px;
+    display: none;
+}
+
+.report-feedback.error {
+    background-color: var(--danger-muted);
+    color: var(--danger);
+    border-left: 4px solid var(--danger);
+}
+
+.report-feedback.success {
+    background-color: var(--success-muted);
+    color: var(--success);
+    border-left: 4px solid var(--success);
+}
+
+/* Estado de carga */
+.loading-spinner {
+    display: none;
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--gray-light);
+    border-top: 3px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spinner 0.8s linear infinite;
+    margin-right: 8px;
+}
+
+@keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (min-width: 992px) {
+    .reportes-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .report-filters {
+        flex-direction: column;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    .report-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .report-card-badge {
+        align-self: flex-start;
+    }
+
+    .report-card-title h3{
+        font-size: 18px;
+    }
+    .reportes-section {
+        padding: 5px;
+    }
+}

@@ -1,0 +1,86 @@
+:root {
+  /* Paleta principal */
+  --primary-color: #37dfe1;
+  --primary-light: #78f0f2;
+  --primary-dark: #24b6b8;
+  --primary-muted: #a3f4f5;
+
+  --secondary-color: #ff5add;
+  --secondary-light: #ff94eb;
+  --secondary-dark: #cc4899;
+  --secondary-muted: #ffc2f2;
+
+  --secondary2-color: #c750e0;
+  --secondary2-light: #e088f0;
+  --secondary2-dark: #9f40b3;
+  --secondary2-muted: #e9bdf6;
+
+  --back-color: #ffffff;
+  --back-muted: #f5f5f5;
+  --gray-light: #e0e0e0;
+  --gray-dark: #999999;
+  --text-dark: #333333;
+  --text-light: #ffffff;
+
+  /* Status Colors */
+  --status-pending: #ff9f1c;
+  --status-processing: #2a9df4;
+  --status-shipped: #4361ee;
+  --status-delivered: #6c92ec;
+  --status-canceled: #ef476f;
+
+  /* Stock status colors */
+  --stock-ok: #38b000;
+  --stock-low: #ff1c1c;
+  --stock-critical: #ef476f;
+
+  /* Suggestion type colors */
+  --suggestion-product: #4361ee;
+  --suggestion-service: #38b000;
+  --suggestion-improvement: #9c6ade;
+  --suggestion-complaint: #ef476f;
+
+  /* Chart colors */
+  --chart-1: var(--primary-color);
+  --chart-2: var(--secondary-color);
+  --chart-3: var(--secondary2-color);
+  --chart-4: #5b8def;
+  --chart-5: #ffbd59;
+
+  /* Additional colors */
+  --success: #2edc62;  
+  --success-muted: #a5fcbf;  
+  --warning: #ff9f1c;
+  --danger: #ef476f;
+  --danger-muted: #fe6e90;
+  --info: #3a86ff;
+
+  /* Box shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 15px 20px rgba(0, 0, 0, 0.1);
+
+  /* Animation */
+  --transition-speed: 0.3s;
+  --transition-fn: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Layout */
+  --sidebar-width: 280px;
+  --header-height: 70px;
+  --border-radius: 12px;
+  --border-radius-sm: 8px;
+  --border-radius-lg: 16px;
+
+  
+}
+
+.back-card-color {
+    background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+
+}
+
+.data-table tbody tr:hover {
+    background-color: var(--back-muted);
+}
+

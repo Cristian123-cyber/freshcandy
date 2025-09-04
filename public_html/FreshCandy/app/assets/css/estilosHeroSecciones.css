@@ -1,0 +1,220 @@
+.page-hero {
+  padding: 40px 30px;
+
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(255, 94, 120, 0.06);
+  text-align: center;
+}
+
+/* Amanecer Tropical - naranjas a morados */
+.page-hero.bg-amanecer-tropical {
+  background: linear-gradient(135deg, 
+    #ff9966 0%, 
+    #ff5e62 30%, 
+    #9d4dff 70%, 
+    #6e48aa 100%);
+}
+
+/* Océano Profundo - azules intensos */
+.page-hero.bg-oceano-profundo {
+  background: linear-gradient(135deg, 
+    #00c3ff 0%, 
+    #0e7ac4 30%, 
+    #2a3985 70%, 
+    #150e56 100%);
+}
+
+/* Limón Frambuesa - cítricos a berries */
+.page-hero.bg-limon-frambuesa {
+  background: linear-gradient(135deg, 
+    #f7ff00 0%, 
+    #d8eb34 25%, 
+    #ff7eb3 60%, 
+    #e94976 100%);
+}
+
+/* Bosque Encantado - verdes a morados */
+.page-hero.bg-bosque-encantado {
+  background: linear-gradient(135deg, 
+    #45bceb 0%, 
+    #24b6ca 35%, 
+    #8543e0 70%, 
+    #6d38d3 100%);
+}
+
+/* Atardecer Cereza - tonos cálidos y vibrantes */
+.page-hero.bg-atardecer-cereza {
+  background: linear-gradient(135deg, 
+    #ffc069 0%, 
+    #ff5f6d 40%, 
+    #d16ba5 70%, 
+    #9e4784 100%);
+}
+
+/* Galaxia Dulce - azules cósmicos y púrpuras */
+.page-hero.bg-galaxia-dulce {
+  background: linear-gradient(135deg, 
+    #00dbde 0%, 
+    #0072ff 35%, 
+    #ba68c8 65%, 
+    #fc38b1 100%);
+}
+
+/* Sandía Splash - de verde a rosa */
+.page-hero.bg-sandia-splash {
+  background: linear-gradient(135deg, 
+    #79d784 0%, 
+    #00b09b 35%, 
+    #fe7594 70%, 
+    #ff4f81 100%);
+}
+
+/* Electric Caramelo - tonos electrizantes */
+.page-hero.bg-electric-caramelo {
+  background: linear-gradient(135deg, 
+    #4facfe 0%, 
+    #21d4fd 30%, 
+    #ff5bac 70%, 
+    #ff3d58 100%);
+}
+
+/* Midnight Berry - tonos oscuros elegantes */
+.page-hero.bg-midnight-berry {
+  background: linear-gradient(135deg, 
+    #2c3e50 0%, 
+    #4b5d8c 30%, 
+    #aa4b6b 70%, 
+    #ee0979 100%);
+}
+
+/* Cotton Candy - tonos pastel suaves */
+.page-hero.bg-cotton-candy {
+  background: linear-gradient(135deg, 
+    #e6f9ff 0%, 
+    #bce6ff 25%, 
+    #ffd1f7 65%, 
+    #ffcfdf 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-title {
+  color: white;
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  padding-bottom: 15px;
+  animation: titleFadeIn 0.8s ease-out forwards;
+  width: fit-content;
+  text-align: center;
+}
+
+/* Línea decorativa ahora entre título y subtítulo */
+.page-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-boton),
+    transparent
+  );
+  border-radius: 3px;
+}
+
+/* Nuevo subtítulo persuasivo */
+.page-subtitle {
+  color: white;
+  font-size: 18px;
+  margin: 15px auto 5px;
+  max-width: 600px;
+  line-height: 1.5;
+  animation: subtitleFadeIn 1s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+/* Destacar elemento de persuasión */
+.persuasive-highlight {
+  color: #3a0770;
+  font-weight: 500;
+}
+
+/* Animaciones */
+@keyframes titleFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtitleFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 30px 20px;
+  }
+
+  .page-title {
+    font-size: 34px;
+  }
+
+  .page-title::after {
+    width: 60px;
+  }
+
+  .page-subtitle {
+    font-size: 16px;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-hero {
+    padding: 25px 15px;
+  }
+
+  .page-title {
+    font-size: 28px;
+  }
+
+  .page-title::after {
+    width: 50px;
+    height: 2px;
+  }
+
+  .page-subtitle {
+    font-size: 15px;
+    margin-top: 10px;
+    padding: 0 10px;
+  }
+}

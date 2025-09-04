@@ -1,0 +1,29 @@
+# Variables de entorno
+.env
+.env.local
+.env.production
+
+# Logs
+*.log
+logs/
+
+# Datos de MySQL
+mysql_data/
+
+# Archivos temporales
+*.tmp
+*.swp
+*.swo
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Backups
+backup/
+*.sql
+*.sql.gz

@@ -1,0 +1,1239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: var(--back-muted);
+  color: var(--text-dark);
+  line-height: 1.6;
+  width: 100%;
+  min-width: 320px;
+}
+
+.cont {
+  position: relative;
+  width: 100%;
+}
+
+.background-especial {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--primary-muted) 0%,
+    var(--back-color) 50%,
+    var(#d7fbff) 70%
+    
+  );
+  z-index: -1;
+}
+
+.background-especial::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(
+      circle,
+      var(--primary-light) 1px,
+      transparent 2px
+    ),
+    radial-gradient(circle, var(--secondary-light) 1px, transparent 2px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  opacity: 0.3;
+}
+
+/* Corregir el problema de desbordamiento */
+body,
+html {
+  max-width: 100%;
+  overflow-x: hidden; /* Previene el scroll horizontal */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.checkout-header {
+  position: sticky;
+  top: 0;
+  z-index: 998;
+  backdrop-filter: blur(8px);
+  background-color: var(--primary-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 80px;
+  width: 80px;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .brand {
+    font-size: 1.2rem;
+  }
+
+  .logo {
+    height: 32px;
+    width: 32px;
+  }
+
+  .back-button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+.page-title {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  position: relative;
+  font-size: 32px;
+  text-align: center;
+}
+
+.page-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: var(--secondary-color);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Primero aseguramos que el contenedor principal se adapte correctamente */
+.checkout-container {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 30px;
+  margin-top: 30px;
+  width: 100%;
+  align-items: start; /* Esto evita que los hijos se estiren verticalmente */
+}
+
+.checkout-left {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.card {
+  background-color: var(--back-color);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+  border: 1px solid var(--gray-light);
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+@media (max-width: 720px) {
+  .checkout-container {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    margin: 0 auto; /* Centra las tarjetas horizontalmente */
+  }
+}
+.card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.card-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--back-muted);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-color);
+  font-size: 18px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin: 0;
+}
+
+.card-subtitle {
+  font-size: 14px;
+  color: #777;
+  margin-top: 5px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid var(--gray-light);
+  position: relative;
+}
+
+/* Estilos personalizados para los radio buttons */
+.radio-option input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--gray-light);
+  position: relative;
+}
+
+.radio-option input[type="radio"]:checked {
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 0 1px var(--secondary-color);
+}
+
+.radio-option input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.radio-option:hover {
+  background-color: var(--back-muted);
+  transform: translateY(-2px);
+}
+
+.radio-option label {
+  cursor: pointer;
+  font-weight: 500;
+  flex: 1;
+}
+
+.radio-option.active {
+  background-color: var(--back-muted);
+  border: 1px solid var(--secondary-color);
+}
+.radio-option.active .payment-method {
+  padding-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.radio-option.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--secondary-color);
+  border-radius: 8px 0 0 8px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--gray-light);
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(225, 55, 219, 0.15);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+@media (max-width: 580px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.back-link:hover {
+  transform: translateX(-3px);
+}
+
+.back-icon {
+  margin-right: 8px;
+}
+
+/* Estilos para el resumen del pedido (lado derecho) */
+.order-summary {
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+  align-self: start; /* Importante para evitar que crezca */
+}
+
+/* Para mobile */
+@media (max-width: 720px) {
+  .checkout-container {
+    grid-template-columns: 1fr;
+  }
+
+  .order-summary {
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+/* Aseguramos que todos los elementos hijos respeten los límites de sus contenedores */
+.checkout-left,
+.order-summary,
+.card {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid var(--gray-light);
+  position: relative;
+}
+
+.product-item:last-child {
+  border-bottom: none;
+}
+
+.product-image {
+  width: 70px;
+  height: 70px;
+  background-color: var(--back-muted);
+  border-radius: 10px;
+  margin-right: 15px;
+  object-fit: cover;
+  border: 1px solid var(--gray-light);
+}
+
+.product-details {
+  flex: 1;
+}
+
+.product-name {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--text-dark);
+}
+
+.product-price,
+.product-quantity {
+  color: #777;
+  font-size: 14px;
+}
+
+.product-quantity {
+  display: inline-block;
+  background-color: var(--secondary-muted);
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 8px;
+}
+
+.product-total {
+  font-weight: bold;
+  color: var(--secondary-color);
+  font-size: 16px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed var(--gray-light);
+}
+
+.summary-row:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.summary-total {
+  font-weight: bold;
+  font-size: 22px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid var(--gray-light);
+  display: flex;
+  justify-content: space-between;
+  color: var(--secondary-color);
+}
+
+.button {
+  display: inline-block;
+  padding: 16px 24px;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+  margin-top: 20px;
+  text-decoration: none;
+  font-size: 16px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(255, 90, 221, 0.3);
+}
+
+.button:hover {
+  background-color: var(--secondary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 90, 221, 0.4);
+}
+
+.button:active {
+  transform: translateY(-1px);
+}
+
+.button.secondary {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border: 1px solid var(--gray-light);
+  box-shadow: none;
+}
+
+.button.secondary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(75, 211, 226, 0.05);
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--gray-light);
+  margin: 25px 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.badge-primary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.badge-secondary {
+  background-color: var(--back-muted);
+  color: var(--secondary-color);
+}
+
+.promo-code {
+  display: flex;
+  margin-top: 15px;
+}
+
+.promo-code input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid var(--gray-light);
+  border-radius: 8px 0 0 8px;
+  font-size: 14px;
+}
+
+.promo-code button {
+  padding: 12px 15px;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.promo-code button:hover {
+  background-color: var(--secondary-dark);
+}
+
+.savings {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.products-scroll {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  padding-right: 5px;
+}
+
+.products-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.products-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.products-scroll::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+.products-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+
+
+/* Variables específicas para el indicador de pasos */
+:root {
+  --step-primary: #ff85a2; /* Color principal para pasos */
+  --step-completed: #4caf50; /* Color para pasos completados */
+  --step-inactive: #e0e0e0; /* Color para pasos inactivos */
+  --step-text: #777777; /* Color para texto de pasos */
+  --step-shadow: rgba(0, 0, 0, 0.1); /* Sombra para elementos */
+}
+
+/* Contenedor principal del indicador */
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 700px;
+  margin: 40px auto;
+  position: relative;
+  padding: 0 20px;
+}
+
+/* Línea conectora entre pasos */
+.steps-container:before {
+  content: "";
+  position: absolute;
+  top: 35px; /* Posición fija en todas las resoluciones */
+  left: 60px;
+  right: 60px;
+  height: 3px;
+  background-color: var(--step-inactive);
+  z-index: 1;
+}
+
+/* Cada paso individual */
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  flex: 1;
+}
+
+/* Separamos el efecto hover para aplicarlo solo al contenido del paso */
+.step-item .step-icon-container,
+.step-item .step-label {
+  transition: transform 0.3s ease;
+}
+
+.step-item:hover .step-icon-container,
+.step-item:hover .step-label {
+  transform: translateY(-5px);
+}
+
+/* Conexión activa entre pasos completados */
+.step-item.completed:after {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-color);
+  z-index: 2;
+}
+
+/* Arreglo para que la línea no sobrepase el último elemento */
+.step-item:last-child:after {
+  display: none;
+}
+
+/* Contenedor del icono */
+.step-icon-container {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  border: 3px solid var(--step-inactive);
+  box-shadow: 0 3px 8px var(--step-shadow);
+
+  position: relative;
+  z-index: 4;
+}
+
+/* Estilos para el paso activo */
+.step-item.active .step-icon-container {
+  border-color: var(--secondary-light);
+  background-color: var(--secondary-color);
+
+  box-shadow: 0 5px 12px rgba(255, 133, 255, 0.3);
+}
+
+/* Estilos para el paso completado */
+.step-item.completed .step-icon-container {
+  background-color: var(--primary-color);
+  border-color: var(--primary-light);
+}
+
+/* Icono dentro del contenedor */
+.step-icon-container i {
+  font-size: 26px;
+  color: var(--step-inactive);
+  transition: all 0.3s ease;
+}
+
+.step-item.active .step-icon-container i {
+  color: white;
+}
+
+.step-item.completed .step-icon-container i {
+  color: white;
+}
+
+/* Texto del paso */
+.step-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--step-text);
+  margin-top: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.step-item.active .step-label {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.step-item.completed .step-label {
+  color: var(--primary-color);
+}
+
+/* Animación de pulso para el paso activo */
+@keyframes step-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 133, 162, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 133, 162, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 133, 162, 0);
+  }
+}
+
+.step-item.active .step-icon-container {
+  animation: step-pulse 2s infinite;
+}
+
+/* Responsive para pantallas medianas y pequeñas */
+@media (max-width: 768px) {
+  .step-icon-container i {
+    font-size: 20px;
+  }
+
+  .step-label {
+    font-size: 12px;
+  }
+
+  .steps-container:before {
+    left: 30px;
+    right: 30px;
+    top: 25px; /* Ajustado para iconos más pequeños */
+  }
+
+  .step-icon-container {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Ajustar la línea de conexión entre pasos completados */
+  .step-item.completed:after {
+    top: 25px; /* Debe coincidir con la línea base */
+  }
+}
+
+@media (max-width: 480px) {
+  .step-icon-container {
+    width: 40px;
+    height: 40px;
+  }
+
+  .step-icon-container i {
+    font-size: 18px;
+  }
+
+  .step-label {
+    font-size: 11px;
+  }
+
+  /* Eliminar estilos que causan el cambio vertical */
+  .step-item {
+    margin-bottom: 0;
+  }
+
+  .steps-container:before {
+    left: 20px;
+    right: 20px;
+    top: 20px; /* Ajustado para iconos aún más pequeños */
+  }
+
+  .step-icon-container {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Ajustar la línea de conexión entre pasos completados */
+  .step-item.completed:after {
+    top: 20px; /* Debe coincidir con la línea base */
+  }
+}
+
+.time-estimation {
+  margin-top: 20px;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px dashed var(--gray-light);
+}
+
+.time-estimation i {
+  color: var(--secondary-color);
+  margin-right: 5px;
+}
+
+.time-value {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Estilos Modal*/
+
+.order-confirmation-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.order-confirmation-modal.show {
+  opacity: 1;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.order-confirmation-modal.show .modal-content {
+  transform: translateY(0);
+}
+
+.modal-header {
+  margin-bottom: 25px;
+}
+
+.success-icon {
+  color: var(--secondary-color);
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+.modal-header h2 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.order-number {
+  background-color: var(--back-muted);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.order-number strong {
+  font-size: 18px;
+  color: var(--primary-color);
+  margin-left: 10px;
+}
+
+.confirmation-message {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.delivery-details {
+  border-top: 1px dashed #eee;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.delivery-details p {
+  margin-bottom: 10px;
+}
+
+.delivery-details i {
+  color: var(--primary-color);
+  margin-right: 10px;
+}
+
+/* Mejoramos la adaptación para diferentes pantallas */
+@media (max-width: 1024px) {
+  .checkout-container {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+  }
+}
+
+/* Para tablets */
+@media (max-width: 768px) {
+  .checkout-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 10px; /* Añadimos padding para evitar que se pegue a los bordes */
+  }
+
+  .order-summary {
+    position: relative; /* Quitamos sticky en mobile para mejorar usabilidad */
+    top: 0;
+  }
+
+  .checkout-header {
+    gap: 20px;
+    padding: 10px;
+  }
+}
+
+/* Para móviles */
+@media (max-width: 576px) {
+  .container {
+    padding: 10px; /* Reducimos el padding del contenedor principal */
+  }
+
+  .checkout-container {
+    margin-top: 15px;
+    padding: 0;
+  }
+
+  .card {
+    padding: 20px; /* Reducimos el padding de las tarjetas en móvil */
+    width: 100%; /* Aseguramos que ocupen todo el ancho disponible */
+    margin: 0; /* Eliminamos márgenes automáticos que podrían causar problemas */
+  }
+
+  .page-title {
+    font-size: 24px; /* Título más pequeño en móvil */
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .checkout-left {
+    width: 100%; /* Aseguramos que ocupe todo el ancho */
+  }
+
+  .radio-option {
+    padding: 10px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px;
+  }
+
+  .product-image {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Eliminar el margin automático que puede causar problemas en el contenedor de la izquierda */
+@media (max-width: 720px) {
+  .checkout-container {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    margin: 0 0 20px 0; /* Cambiamos margin: 0 auto a margin: 0 0 20px 0 */
+    width: 100%;
+  }
+
+  .order-summary {
+    margin: 0; /* Quita cualquier margen automático */
+  }
+}
+
+/* Mejoramos la visualización del formulario en móviles */
+@media (max-width: 480px) {
+  .form-row {
+    grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+  }
+
+  .button {
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+
+  .summary-total {
+    font-size: 18px;
+  }
+
+  .promo-code input {
+    padding: 10px;
+  }
+
+  .promo-code button {
+    padding: 10px 12px;
+  }
+}
+/* Estilos para la nueva información de métodos de pago */
+.payment-method-info {
+  display: none;
+  margin-left: 28px; /* Alineado con el radio button */
+  margin-bottom: 15px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.payment-method-info.active {
+  display: block;
+}
+
+.payment-method-description {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
+.payment-method-additional-info {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #eee;
+  color: #555;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.accounts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.account-card {
+  flex: 1 1 200px;
+  min-width: 0;
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  box-shadow: 0 2px 4px rgb(241, 65, 223) !important;
+  border: 1px solid var(--secondary-color-light);
+}
+
+.account-icon {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  margin-top: 2px;
+}
+
+.account-details h4 {
+  margin: 0 0 5px 0;
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+.account-details p {
+  margin: 3px 0;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estructura principal */
+.payment-methods-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0 1rem;
+}
+
+.payment-method {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.payment-method:last-child {
+  border-bottom: none;
+}
+
+/* Detalles del método */
+.method-details {
+  padding-left: 2rem;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.radio-option.active ~ .method-details {
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 1rem;
+}
+
+.method-description {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.method-additional {
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.additional-note {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.additional-note::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+/* Contenedor vertical */
+.bank-accounts-vertical {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Cards estilo anterior pero mejorado */
+.account-card-vertical {
+  background: white;
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: 0 3px 10px rgba(233, 102, 250, 0.448);
+  border: 1px solid rgba(255, 33, 162, 0.03);
+  transition: all 0.25s ease;
+}
+
+.account-card-vertical:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border-color: rgb(253, 72, 150);
+}
+
+.account-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Reducimos el gap para mejor alineación */
+  margin-bottom: 1rem;
+}
+
+.account-icon {
+  /* Nuevos estilos */
+  font-size: 1.4rem; /* Tamaño más grande */
+  color: var(--secondary-color); /* Color del icono */
+  margin-right: 0.5rem;
+  width: auto; /* Para que no fuerce dimensiones */
+  height: auto;
+  display: inline-flex; /* Para mejor alineación */
+}
+
+.account-title {
+  margin: 0;
+  color: var(--secondary-color);
+  font-size: 1.05rem; /* Ajuste sutil de tamaño */
+  font-weight: 600;
+}
+
+.account-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detail-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.detail-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  min-width: 60px;
+  font-weight: 500;
+}
+
+.detail-value {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  font-family: "Roboto Mono", monospace;
+  letter-spacing: 0.3px;
+  word-break: break-all;
+}
+
+.error {
+  border: 1px solid var(--secondary-color) !important;
+}
+
+.error-border {
+  box-shadow: 0 0 0 2px rgba(255, 56, 96, 0.2);
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+}
+
+.error-message {
+  color: #ff3860;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+}
+
+.error-message.visible {
+  display: block;
+}
+
+.global-error-message {
+  background: #ff3860;
+  color: white;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+}

@@ -1,0 +1,21 @@
+FROM php:8.2-apache
+
+RUN apt-get update && apt-get install -y \
+    tzdata \
+    && docker-php-ext-install mysqli pdo pdo_mysql \
+    && docker-php-ext-enable mysqli \
+    && a2enmod rewrite \
+    && rm -rf /var/lib/apt/lists/*
+
+ENV TZ=America/Bogota
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN echo "date.timezone = America/Bogota" > /usr/local/etc/php/conf.d/timezone.ini
+
+COPY php.ini /usr/local/etc/php/php.ini
+
+# 👇 Cambiamos aquí para copiar SOLO el contenido de FreshCandy/app/
+COPY public_html/FreshCandy/app/ /var/www/html/
+
+RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
+
+WORKDIR /var/www/html

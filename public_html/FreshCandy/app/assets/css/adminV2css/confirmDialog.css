@@ -1,0 +1,145 @@
+/* Estilos para la modal de confirmación */
+.dam-modal {
+    display: none;
+    position: fixed;
+    z-index: 1001; /* Mayor que el de ingredientes */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    
+  }
+  
+  .dam-modal-content {
+    background-color: var(--back-color);
+    margin: 10% auto;
+    padding: 0;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    animation: dam-modalFadeIn 0.3s ease-out;
+    overflow: hidden;
+  }
+  
+  @keyframes dam-modalFadeIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .dam-modal-header {
+    padding: 20px;
+    background: linear-gradient(135deg, var(--secondary2-color), var(--secondary-color));
+    color: var(--text-light);
+    position: relative;
+    text-align: center;
+  }
+  
+  .dam-modal-header h2 {
+    margin: 10px 0 0;
+    font-size: 1.5rem;
+    color: var(--text-light) !important;
+  }
+  
+  .dam-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .dam-close-modal {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-light);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .dam-close-modal:hover {
+    transform: scale(1.2);
+  }
+  
+  .dam-modal-body {
+    padding: 25px;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  
+  .dam-modal-footer {
+    padding: 15px 20px;
+    background-color: var(--back-muted);
+    text-align: center;
+    border-top: 1px solid var(--gray-light);
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .dam-btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    min-width: 120px;
+  }
+  
+  .dam-btn-cancel {
+    background-color: var(--gray-light);
+    color: var(--text-dark);
+  }
+  
+  .dam-btn-cancel:hover {
+    background-color: #d0d0d0;
+  }
+  
+  .dam-btn-confirm {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+  }
+  
+  .dam-btn-confirm:hover {
+    background-color: var(--secondary-dark);
+  }
+  
+  /* Estilos para diferentes tipos de acciones */
+  .dam-type-delete .dam-modal-header,
+  .dam-type-delete .dam-btn-confirm {
+    background: linear-gradient(135deg, #ff3b3b, #ff5add);
+  }
+  
+  .dam-type-warning .dam-modal-header,
+  .dam-type-warning .dam-btn-confirm {
+    background: linear-gradient(135deg, #ff9500, #ffcc00);
+  }
+  
+  .dam-type-success .dam-modal-header,
+  .dam-type-success .dam-btn-confirm {
+    background: linear-gradient(135deg, #4cd964, #34aadc);
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .dam-modal-content {
+      margin: 20% auto;
+      width: 85%;
+    }
+    
+    .dam-modal-footer {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .dam-btn {
+      width: 100%;
+    }
+  }

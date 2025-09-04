@@ -1,0 +1,104 @@
+ /* Ventana de confirmación */
+ .confirm-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+
+  .confirm-dialog.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .confirm-dialog-content {
+    width: 90%;
+    max-width: 400px;
+    background-color: var(--back-color);
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    transform: scale(0.9);
+    transition: transform 0.3s;
+    overflow: hidden;
+  }
+
+  .confirm-dialog.active .confirm-dialog-content {
+    transform: scale(1);
+  }
+
+  .confirm-dialog-header {
+    padding: 18px 20px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary2-color) 100%);
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+  }
+
+  .confirm-dialog-icon {
+    margin-right: 12px;
+    font-size: 1.2rem;
+  }
+
+  .confirm-dialog-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .confirm-dialog-body {
+    padding: 25px 20px;
+    text-align: center;
+  }
+
+  .confirm-dialog-message {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+  }
+
+  .confirm-dialog-product {
+    font-weight: 700;
+    color: var(--secondary-color);
+  }
+
+  .confirm-dialog-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .confirm-dialog-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .confirm-dialog-btn-cancel {
+    background-color: var(--gray-light);
+    color: var(--text-dark);
+  }
+
+  .confirm-dialog-btn-cancel:hover {
+    background-color: var(--gray-dark);
+    color: var(--text-light);
+  }
+
+  .confirm-dialog-btn-confirm {
+    background-color: #e74c3c;
+    color: var(--text-light);
+  }
+
+  .confirm-dialog-btn-confirm:hover {
+    background-color: #c0392b;
+  }

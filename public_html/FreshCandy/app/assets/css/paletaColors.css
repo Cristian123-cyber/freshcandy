@@ -1,0 +1,28 @@
+:root {
+  
+  /* Agrega aquí más colores si los tienes */
+
+  --primary-color: #37dfe1;
+  --primary-light: #78f0f2;
+  --primary-dark: #24b6b8;
+  --primary-muted: #a3f4f5;
+
+  --secondary-color: #ff5add;
+  --secondary-light: #ff94eb;
+  --secondary-dark: #cc4899;
+  --secondary-muted: #ffc2f2;
+
+  --secondary2-color: #c750e0;
+  --secondary2-light: #e088f0;
+  --secondary2-dark: #9f40b3;
+  --secondary2-muted: #e9bdf6;
+
+  --back-color: #ffffff;
+  --back-muted: #f5f5f5;
+  --gray-light: #e0e0e0;
+  --gray-dark: #999999;
+  --text-dark: #333333;
+  --text-light: #ffffff;
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+}

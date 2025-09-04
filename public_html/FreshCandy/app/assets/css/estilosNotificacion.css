@@ -1,0 +1,63 @@
+/* Estilos notificacion emergente */
+
+    
+.notification {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 15px 20px;
+    z-index: 99999;
+    transform: translateX(120%);
+    transition: transform 0.3s ease;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+}
+
+.notification i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.notification.error {
+    background-color: #111111;
+
+
+}
+.notification.success {
+    background-color: var(--primary-color);
+
+
+}
+.notification.success i {
+    color: #ffffff;
+    
+
+    
+}
+
+.notification span {
+    color: white;
+}
+
+.notification.error i {
+    color: #ff0000;
+    
+}
+
+@media (max-width: 560px) {
+    .notification {
+        max-width: 80%;
+        
+    }
+  
+}

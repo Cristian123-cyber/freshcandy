@@ -1,0 +1,9 @@
+#ignorar las imagenes de los productos
+app/assets/images/*
+
+
+
+#ignorar el debug.log
+app/controllers/debug.log
+
+
