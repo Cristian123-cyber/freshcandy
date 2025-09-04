@@ -207,7 +207,7 @@ class User
 
     public function verifyClientLogin($escapedEmail, $password)
     {
-        //$this->registerAdmin('Administrador', 'admin2@gmail.com', '!Admin123');
+        $this->registerAdmin('Administrador', 'admin2@gmail.com', '!Admin123');
         //verificar login en la tabla clientes
         $query = "SELECT password FROM clientes WHERE correo_cliente = '$escapedEmail'";
         $result = $this->mysql->efectuarConsulta($query);
