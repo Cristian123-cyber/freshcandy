@@ -806,6 +806,8 @@ async function sendDataPedido(orderData) {
     );
 
     const data = await response.json();
+
+    console.log(data);
     return data;
   } catch (error) {
     showNotification("Error al enviar el pedido", "error");

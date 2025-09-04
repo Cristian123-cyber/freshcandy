@@ -305,7 +305,7 @@ class PedidosController
 
 
             if (!$isValid) {
-                self::handleResponse(false, "Datos inválidos", [], 400);
+                self::handleResponse(false, "Datos inválidos 1", [], 400);
                 return;
             }
 
@@ -314,7 +314,7 @@ class PedidosController
 
 
             if (!$sanitizedData) {
-                self::handleResponse(false, "Datos inválidos", [], 400);
+                self::handleResponse(false, "Datos inválidos 2", [], 400);
             }
 
 
