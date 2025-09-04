@@ -25,5 +25,3 @@ Thumbs.db
 
 # Backups
 backup/
-*.sql
-*.sql.gz
