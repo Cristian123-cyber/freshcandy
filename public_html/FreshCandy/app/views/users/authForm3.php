@@ -44,7 +44,7 @@ unset($_SESSION['flash_error']);
     <div class="page-hero bg-bosque-encantado">
         <div class="hero-content">
             <h1 class="page-title">Acceso Fresh Candy</h1>
-            <p class="page-subtitle">Únete a nuestra comunidad y obtén <span class="persuasive-highlight">15% de descuento en tu primera compra.</span></p>
+            <p class="page-subtitle">Únete a nuestra comunidad</span></p>
         </div>
     </div>
 

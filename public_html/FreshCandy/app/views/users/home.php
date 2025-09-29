@@ -130,7 +130,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                     <div class="carrusel-content">
                         <h2>Pasión por lo <span>Artesanal</span></h2>
-                        <p>Desde el corazón de nuestra cocina, creamos helados que cuentan historias con cada cucharada.</p>
+                        <p>Desde el corazón de nuestra cocina, creamos helados que cuentan historias con cada bocado.</p>
                         <a href="#seccionProductos" class="carrusel-btn">Descubre nuestros sabores</a>
                     </div>
                 </div>
@@ -154,7 +154,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                     <div class="carrusel-content">
                         <h2>Una Experiencia <span>Irresistible</span></h2>
-                        <p>Sabores que despiertan emociones. Vive la magia de Fresh Candy en cada visita.</p>
+                        <p>Sabores que despiertan emociones. Vive la magia de Fresh Candy en cada ocasion.</p>
                         <a href="#seccionProductos" class="carrusel-btn">Conócenos</a>
                     </div>
                 </div>
