@@ -126,7 +126,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 <!-- Slide 1 -->
                 <div class="carrusel-slide">
                     <div class="carrusel-img-wrapper">
-                        <img src="../../assets/images//Costco-Food-Court-Ice-Cream-Sundae-Chocolate-and-Strwberry-1024x689.jpg" alt="Helados artesanales premium" />
+                        <img src="../../assets/images/Gemini_Generated_Image_5a18rk5a18rk5a18.png" alt="Helados artesanales premium" />
                     </div>
                     <div class="carrusel-content">
                         <h2>Pasión por lo <span>Artesanal</span></h2>
@@ -138,7 +138,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 <!-- Slide 2 -->
                 <div class="carrusel-slide">
                     <div class="carrusel-img-wrapper">
-                        <img src="../../assets/images/AA1EE0qc.jpg" alt="Elaboración artesanal" />
+                        <img src="../../assets/images/Gemini_Generated_Image_ox30zaox30zaox30.png" alt="Elaboración artesanal" />
                     </div>
                     <div class="carrusel-content">
                         <h2>Frescura pensada <span>para Ti</span></h2>
@@ -150,7 +150,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 <!-- Slide 3 -->
                 <div class="carrusel-slide">
                     <div class="carrusel-img-wrapper">
-                        <img src="../../assets/images/AA1EE0qc.jpg" alt="Eventos especiales" />
+                        <img src="../../assets/images/Gemini_Generated_Image_ekp9r9ekp9r9ekp9.png" alt="Eventos especiales" />
                     </div>
                     <div class="carrusel-content">
                         <h2>Una Experiencia <span>Irresistible</span></h2>

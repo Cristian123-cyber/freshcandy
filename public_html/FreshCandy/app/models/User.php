@@ -191,6 +191,7 @@ class User
 
     public function isClientEmail($email)
     {
+        //$this->registerAdmin('admin', 'admin@freshcandy.com', '!Admin123'); // Eliminar esta línea en producción
         // Verificar si el correo electrónico pertenece a un cliente
         $query = "SELECT id_cliente FROM clientes WHERE correo_cliente = '$email'";
         $result = $this->mysql->efectuarConsulta($query);
